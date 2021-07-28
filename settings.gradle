@@ -1,0 +1,2 @@
+rootProject.name = "heads or tails"
+include ':app'
