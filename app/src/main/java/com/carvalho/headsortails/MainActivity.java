@@ -7,27 +7,27 @@ import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import java.util.Random;
+
 public class MainActivity extends AppCompatActivity {
 
-    private Button buttonSend;
+    private Button buttonPlay;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        buttonSend = findViewById(R.id.btnSend);
+        buttonPlay = findViewById(R.id.btnPlay);
 
-        buttonSend.setOnClickListener(new View.OnClickListener() {
+        buttonPlay.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                Intent intent = new Intent(getApplicationContext(), MainActivity2.class);
-                intent.putExtra("name", "Lucas");
-                intent.putExtra("age", 18);
+                Intent intent = new Intent(getApplicationContext(), ResultActivity.class);
+                int numRandom = new Random().nextInt(2);
+                intent.putExtra("result", numRandom);
                 startActivity(intent);
-
-
             }
         });
     }
